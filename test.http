@@ -1,0 +1,38 @@
+GET http://localhost:8080/jpa/bricks
+
+###
+POST http://localhost:8080/jpa/brick
+Content-Type: application/text
+
+brick1
+
+###
+POST http://localhost:8080/jpa/legomodel
+Content-Type: application/json
+
+{
+  "name": "Model123",
+  "brickId": 1,
+  "amount": 42
+}
+
+###
+PUT http://localhost:8080/containers/container1/blob1
+Content-Type: text/plain
+
+abc1
+
+###
+GET http://localhost:8080/containers/container1/blob1
+
+###
+GET http://localhost:8080/containers/container1/properties
+
+###
+GET http://localhost:8080/containers/container1/blob1/properties
+
+###
+PUT http://localhost:8080/documents/document-container/document1
+Content-Type: text/plain
+
+document test...123

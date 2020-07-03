@@ -1,0 +1,26 @@
+server:
+    shutdown: graceful
+
+spring:
+    lifecycle:
+        timeout-per-shutdown-phase: 8s
+
+    datasource:
+        continue-on-error: true
+        driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+        initialization-mode: always
+        password: SqlServer123
+        url: jdbc:sqlserver://localhost:1433
+        username: sa
+    jpa:
+        properties:
+            hibernate:
+                format_sql: false
+        show-sql: true
+
+azure:
+    storage:
+        default-endpoints-protocol: ${AZURE_STORAGE_PROTOCOL:http}
+        account-name: ${AZURE_STORAGE_ACCOUNT_NAME:devstoreaccount1}
+        account-key: ${AZURE_STORAGE_ACCOUNT_KEY:Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==}
+        blob-endpoint: ${AZURE_STORAGE_BLOB_ENDPOINT:http://127.0.0.1:10000/devstoreaccount1}
